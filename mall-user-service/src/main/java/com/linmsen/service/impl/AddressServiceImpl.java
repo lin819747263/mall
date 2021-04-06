@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-04-06
  */
 @Service
-public class AddressServiceImpl extends ServiceImpl<AddressMapper, AddressDO> implements AddressService {
+public class AddressServiceImpl implements AddressService {
 
 }

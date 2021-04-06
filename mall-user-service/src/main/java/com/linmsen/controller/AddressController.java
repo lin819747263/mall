@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021-04-06
  */
 @RestController
-@RequestMapping("/addressDO")
+@RequestMapping("/api/address/v1")
 public class AddressController {
 
 }
