@@ -1,6 +1,7 @@
 package com.linmsen.controller;
 
 
+import com.linmsen.JsonData;
 import com.linmsen.model.AddressDO;
 import com.linmsen.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,9 @@ public class AddressController {
 
 
     @GetMapping("details/{id}")
-    public AddressDO details(@PathVariable int id){
-        return addressService.details(id);
+    public JsonData details(@PathVariable int id){
+        AddressDO addressDO = addressService.details(id);
+        return JsonData.buildSuccess(addressDO);
     }
 
 }
