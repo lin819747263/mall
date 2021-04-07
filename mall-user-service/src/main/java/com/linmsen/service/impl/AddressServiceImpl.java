@@ -1,9 +1,10 @@
 package com.linmsen.service.impl;
 
-import com.linmsen.model.AddressDO;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.linmsen.mapper.AddressMapper;
+import com.linmsen.model.AddressDO;
 import com.linmsen.service.AddressService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AddressServiceImpl implements AddressService {
+    @Autowired
+    AddressMapper addressMapper;
 
+    @Override
+    public AddressDO details(int id) {
+        return addressMapper.selectOne(new QueryWrapper<AddressDO>().eq("id", id));
+    }
 }
