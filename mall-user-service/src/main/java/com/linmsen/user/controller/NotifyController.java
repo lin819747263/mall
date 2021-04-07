@@ -4,6 +4,8 @@ import com.google.code.kaptcha.Producer;
 import com.linmsen.CommonUtil;
 import com.linmsen.JsonData;
 import com.linmsen.enums.BizCodeEnum;
+import com.linmsen.user.SendCodeEnum;
+import com.linmsen.user.service.NotifyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -33,8 +35,8 @@ public class NotifyController {
     @Qualifier("captchaProducer")
     private Producer captchaProducer;
 
-//    @Autowired
-//    NotifyServic notifyService
+    @Autowired
+    NotifyService notifyService;
 
     @Autowired
     private StringRedisTemplate redisTemplate;
@@ -72,8 +74,8 @@ public class NotifyController {
 
         if(captcha!=null && cacheCaptcha!=null && cacheCaptcha.equalsIgnoreCase(captcha)) {
             redisTemplate.delete(key);
-//            JsonData jsonData = notifyService.sendCode(SendCodeEnum.USER_REGISTER,to);
-            return null;
+            JsonData jsonData = notifyService.sendCode(SendCodeEnum.USER_REGISTER,to);
+            return jsonData;
         }else {
             return JsonData.buildResult(BizCodeEnum.CODE_CAPTCHA);
         }

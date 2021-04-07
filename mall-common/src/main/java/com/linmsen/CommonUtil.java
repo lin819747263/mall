@@ -1,9 +1,12 @@
 package com.linmsen;
 
+import com.baomidou.mybatisplus.extension.api.R;
+
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
+import java.util.Random;
 import java.util.UUID;
 
 public class CommonUtil {
@@ -69,5 +72,15 @@ public class CommonUtil {
 
     public static String generateUUID() {
         return UUID.randomUUID().toString();
+    }
+
+    public static String getRandomCode(int length){
+        String source = "0123456789";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+        for(int i =0;i< length;i++){
+            sb.append(source.charAt(random.nextInt(9)));
+        }
+        return sb.toString();
     }
 }
