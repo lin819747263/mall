@@ -1,6 +1,6 @@
-package com.linmsen.mapper;
+package com.linmsen.user.mapper;
 
-import com.linmsen.model.AddressDO;
+import com.linmsen.user.model.AddressDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

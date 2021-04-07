@@ -1,9 +1,9 @@
-package com.linmsen.service.impl;
+package com.linmsen.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linmsen.mapper.AddressMapper;
-import com.linmsen.model.AddressDO;
-import com.linmsen.service.AddressService;
+import com.linmsen.user.mapper.AddressMapper;
+import com.linmsen.user.model.AddressDO;
+import com.linmsen.user.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

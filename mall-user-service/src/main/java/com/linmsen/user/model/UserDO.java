@@ -1,4 +1,4 @@
-package com.linmsen.model;
+package com.linmsen.user.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;

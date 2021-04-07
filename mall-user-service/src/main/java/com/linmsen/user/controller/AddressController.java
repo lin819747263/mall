@@ -1,9 +1,9 @@
-package com.linmsen.controller;
+package com.linmsen.user.controller;
 
 
 import com.linmsen.JsonData;
-import com.linmsen.model.AddressDO;
-import com.linmsen.service.AddressService;
+import com.linmsen.user.model.AddressDO;
+import com.linmsen.user.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

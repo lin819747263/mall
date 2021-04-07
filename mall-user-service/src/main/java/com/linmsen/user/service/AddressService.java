@@ -1,7 +1,6 @@
-package com.linmsen.service;
+package com.linmsen.user.service;
 
-import com.linmsen.model.AddressDO;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.linmsen.user.model.AddressDO;
 
 /**
  * <p>
