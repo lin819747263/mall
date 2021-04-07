@@ -10,6 +10,26 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/mall?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  redis:
+    database: 8
+    host: 47.99.206.79
+    port: 6379
+  mail:
+    host: smtp.163.com #发送邮件服务器
+    username: 18434351211@163.com #发送邮件的邮箱地址
+    password: BZCVUCJVABUTXITD #客户端授权码，不是邮箱密码,网易的是自己设置的
+    from: 18434351211@163.com # 发送邮件的地址，和上面username一致
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+
+aliyun:
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id: LTAI5tGfunWBochy1jAkUDdB
+    access-key-secret: bJ8oSqqfP24ruj68V7ufZcxdKYp06q
+    bucketname: linmsen
 #配置plus打印sql日志
 mybatis-plus:
   configuration:

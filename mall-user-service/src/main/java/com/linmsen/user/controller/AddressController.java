@@ -4,6 +4,7 @@ package com.linmsen.user.controller;
 import com.linmsen.JsonData;
 import com.linmsen.user.model.AddressDO;
 import com.linmsen.user.service.AddressService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author linmsne
  * @since 2021-04-06
  */
+@Api(tags = "地址")
 @RestController
 @RequestMapping("/api/address/v1")
 public class AddressController {
