@@ -2,6 +2,7 @@ package com.linmsen.user.service;
 
 import com.linmsen.JsonData;
 import com.linmsen.user.controller.vo.RegisterVO;
+import com.linmsen.user.controller.vo.UserLoginRequest;
 
 /**
  * <p>
@@ -14,5 +15,7 @@ import com.linmsen.user.controller.vo.RegisterVO;
 public interface UserService {
 
     JsonData register(RegisterVO register);
+
+    JsonData login(UserLoginRequest loginRequest);
 
 }

@@ -1,8 +1,12 @@
 package com.linmsen;
 
 import com.baomidou.mybatisplus.extension.api.R;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
@@ -94,5 +98,18 @@ public class CommonUtil {
             saltString.append(ALL_CHAR_NUM.charAt(random.nextInt(ALL_CHAR_NUM.length())));
         }
         return saltString.toString();
+    }
+
+    public static void sendJsonMessage(HttpServletResponse response, JsonData buildError) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        response.setContentType("application/json;chartset=utf-8");
+        try {
+            PrintWriter writer = response.getWriter();
+            writer.write(objectMapper.writeValueAsString(objectMapper));
+            writer.close();
+            response.flushBuffer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

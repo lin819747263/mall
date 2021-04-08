@@ -4,6 +4,7 @@ package com.linmsen.user.controller;
 import com.linmsen.JsonData;
 import com.linmsen.enums.BizCodeEnum;
 import com.linmsen.user.controller.vo.RegisterVO;
+import com.linmsen.user.controller.vo.UserLoginRequest;
 import com.linmsen.user.service.FileService;
 import com.linmsen.user.service.UserService;
 import io.swagger.annotations.Api;
@@ -47,6 +48,17 @@ public class UserController {
     @PostMapping(value = "register")
     public JsonData register(RegisterVO register){
          return userService.register(register);
+    }
+
+    /**
+     * 登录
+     * @param loginRequest
+     * @return
+     */
+    @PostMapping("login")
+    public JsonData login(@RequestBody UserLoginRequest loginRequest){
+        JsonData jsonData = userService.login(loginRequest);
+        return jsonData;
     }
 }
 
