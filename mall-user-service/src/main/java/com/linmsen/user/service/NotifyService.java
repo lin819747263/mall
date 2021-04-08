@@ -6,4 +6,6 @@ import com.linmsen.user.SendCodeEnum;
 public interface NotifyService {
 
     JsonData sendCode(SendCodeEnum sendCodeType, String to);
+
+    boolean checkCode(SendCodeEnum sendCodeType, String to, String code);
 }

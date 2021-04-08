@@ -10,6 +10,8 @@ import java.util.Random;
 import java.util.UUID;
 
 public class CommonUtil {
+
+    private static final String ALL_CHAR_NUM = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     /**
      * 获取ip
      * @param request
@@ -82,5 +84,15 @@ public class CommonUtil {
             sb.append(source.charAt(random.nextInt(9)));
         }
         return sb.toString();
+    }
+
+    public static String getStringRandomCode(int length) {
+        //生成随机数字和字母,
+        Random random = new Random();
+        StringBuilder saltString = new StringBuilder(length);
+        for (int i = 1; i <= length; ++i) {
+            saltString.append(ALL_CHAR_NUM.charAt(random.nextInt(ALL_CHAR_NUM.length())));
+        }
+        return saltString.toString();
     }
 }
