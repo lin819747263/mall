@@ -60,5 +60,16 @@ public class UserController {
         JsonData jsonData = userService.login(loginRequest);
         return jsonData;
     }
+
+    /**
+     * 登录
+     * @param loginRequest
+     * @return
+     */
+    @GetMapping("getUser")
+    public JsonData getUser(){
+        JsonData jsonData = userService.getUser();
+        return jsonData;
+    }
 }
 

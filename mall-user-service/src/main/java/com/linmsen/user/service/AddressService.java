@@ -1,6 +1,10 @@
 package com.linmsen.user.service;
 
+import com.linmsen.user.controller.vo.AddressGetInput;
+import com.linmsen.user.controller.vo.AddressVO;
 import com.linmsen.user.model.AddressDO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,4 +18,12 @@ public interface AddressService {
 
     AddressDO details(int id);
 
+    int add(AddressGetInput input);
+
+    AddressVO findById(long addressId);
+
+    int del(long addressId);
+
+
+    List<AddressVO> findAll();
 }

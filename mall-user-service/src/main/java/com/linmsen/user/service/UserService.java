@@ -18,4 +18,5 @@ public interface UserService {
 
     JsonData login(UserLoginRequest loginRequest);
 
+    JsonData getUser();
 }

@@ -5,6 +5,7 @@ import com.linmsen.CommonUtil;
 import com.linmsen.JsonData;
 import com.linmsen.JwtUtil;
 import com.linmsen.LoginUser;
+import com.linmsen.content.UserContent;
 import com.linmsen.enums.BizCodeEnum;
 import com.linmsen.user.SendCodeEnum;
 import com.linmsen.user.controller.vo.RegisterVO;
@@ -81,6 +82,13 @@ public class UserServiceImpl implements UserService {
             //未注册
             return JsonData.buildResult(BizCodeEnum.ACCOUNT_UNREGISTER);
         }
+    }
+
+    @Override
+    public JsonData getUser() {
+        long id = UserContent.get().getId();
+        UserDO user = userMapper.selectById(id);
+        return JsonData.buildSuccess(user);
     }
 
 

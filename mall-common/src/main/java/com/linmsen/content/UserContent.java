@@ -11,8 +11,8 @@ public class UserContent {
         userThreadLocal.set(user);
     }
 
-    public static void get(){
-        userThreadLocal.get();
+    public static LoginUser get(){
+        return userThreadLocal.get();
     }
 
     public static void remove(){
