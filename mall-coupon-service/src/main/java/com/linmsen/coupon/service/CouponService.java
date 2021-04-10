@@ -1,5 +1,6 @@
 package com.linmsen.coupon.service;
 
+import com.linmsen.JsonData;
 import com.linmsen.coupon.model.CouponDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -16,5 +17,7 @@ import java.util.Map;
 public interface CouponService {
 
     Map<String, Object> pageCouponActivity(int page, int size);
+
+    JsonData addCoupon(long couponId, String couponCategory);
 
 }
