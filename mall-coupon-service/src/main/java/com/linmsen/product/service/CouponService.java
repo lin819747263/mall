@@ -1,8 +1,7 @@
-package com.linmsen.coupon.service;
+package com.linmsen.product.service;
 
 import com.linmsen.JsonData;
-import com.linmsen.coupon.model.CouponDO;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.linmsen.product.model.CouponDO;
 
 import java.util.Map;
 

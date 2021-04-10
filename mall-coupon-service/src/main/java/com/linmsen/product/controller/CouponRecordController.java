@@ -1,9 +1,10 @@
-package com.linmsen.coupon.controller;
+package com.linmsen.product.controller;
 
 
 import com.linmsen.JsonData;
-import com.linmsen.coupon.controller.vo.CouponRecordVO;
-import com.linmsen.coupon.service.CouponRecordService;
+import com.linmsen.product.controller.vo.CouponRecordVO;
+import com.linmsen.product.controller.vo.NewUserCouponAddInput;
+import com.linmsen.product.service.CouponRecordService;
 import com.linmsen.enums.BizCodeEnum;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,14 @@ public class CouponRecordController {
 
         CouponRecordVO couponRecordVO = couponRecordService.findById(recordId);
         return  couponRecordVO == null? JsonData.buildResult(BizCodeEnum.COUPON_NO_EXITS):JsonData.buildSuccess(couponRecordVO);
+    }
+
+
+    @ApiOperation("添加新用户优惠券")
+    @PostMapping("/addNewUserCoupon")
+    public JsonData addNewUserCoupon(NewUserCouponAddInput input){
+
+        return couponRecordService.initnewUserCoupon(input);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.linmsen.coupon.mapper;
 
-import com.linmsen.coupon.model.CouponDO;
+import com.linmsen.coupon.model.ProductDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,7 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author linmsen
  * @since 2021-04-10
  */
-public interface CouponMapper extends BaseMapper<CouponDO> {
+public interface ProductMapper extends BaseMapper<ProductDO> {
 
-    int reduceStock(long couponId, Integer stock);
 }
