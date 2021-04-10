@@ -1,4 +1,4 @@
-package com.linmsen.coupon.controller;
+package com.linmsen.coupon.controller.vo;
 
 import lombok.Data;
 

@@ -7,7 +7,7 @@ import com.linmsen.BizException;
 import com.linmsen.JsonData;
 import com.linmsen.LoginUser;
 import com.linmsen.content.UserContent;
-import com.linmsen.coupon.controller.CouponVO;
+import com.linmsen.coupon.controller.vo.CouponVO;
 import com.linmsen.coupon.mapper.CouponMapper;
 import com.linmsen.coupon.mapper.CouponRecordMapper;
 import com.linmsen.coupon.model.CouponDO;

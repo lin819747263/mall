@@ -1,7 +1,10 @@
 package com.linmsen.coupon.service;
 
+import com.linmsen.coupon.controller.vo.CouponRecordVO;
 import com.linmsen.coupon.model.CouponRecordDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CouponRecordService {
 
+    Map<String, Object> page(int page, int size);
+
+    CouponRecordVO findById(long recordId);
 }
