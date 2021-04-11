@@ -48,12 +48,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public JsonData detail(String productId) {
+    public JsonData detail(Long productId) {
         ProductDO productDO = productMapper.selectById(productId);
         return JsonData.buildSuccess(beanProcess(productDO));
     }
 
-    private Object beanProcess(ProductDO obj) {
+    @Override
+    public ProductVO findDetailById(Long productId) {
+        ProductDO productDO = productMapper.selectById(productId);
+        return beanProcess(productDO);
+    }
+
+    private ProductVO beanProcess(ProductDO obj) {
 
         return new ProductVO();
     }

@@ -37,7 +37,7 @@ public class ProductController {
 
     @ApiOperation("产品详情")
     @GetMapping("detail/{productId}")
-    public JsonData detail(@PathVariable String productId) {
+    public JsonData detail(@PathVariable Long productId) {
         return productService.detail(productId);
     }
 
