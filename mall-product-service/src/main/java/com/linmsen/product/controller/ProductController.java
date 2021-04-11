@@ -21,7 +21,7 @@ import java.util.Map;
  * @since 2021-04-10
  */
 @RestController
-@RequestMapping("/productDO")
+@RequestMapping("/api/product")
 public class ProductController {
 
     @Autowired

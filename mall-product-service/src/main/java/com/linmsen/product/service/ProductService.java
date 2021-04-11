@@ -23,4 +23,6 @@ public interface ProductService {
     JsonData detail(Long productId);
 
     ProductVO findDetailById(Long productId);
+
+    List<ProductVO> findProductsByIdBatch(List<Long> productIdList);
 }
