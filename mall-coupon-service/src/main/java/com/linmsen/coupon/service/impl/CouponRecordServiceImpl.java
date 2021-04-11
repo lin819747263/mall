@@ -11,6 +11,7 @@ import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
 import com.linmsen.coupon.mapper.CouponRecordMapper;
 import com.linmsen.coupon.model.CouponRecordDO;
 import com.linmsen.coupon.service.CouponRecordService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,13 +58,9 @@ public class CouponRecordServiceImpl implements CouponRecordService {
         return couponRecordVO;
     }
 
-    @Override
-    public JsonData initnewUserCoupon(NewUserCouponAddInput input) {
-
-        return null;
-    }
-
     private CouponRecordVO beanProcess(CouponRecordDO obj) {
-        return new CouponRecordVO();
+        CouponRecordVO vo = new CouponRecordVO();
+        BeanUtils.copyProperties(obj , vo);
+        return vo;
     }
 }

@@ -46,13 +46,5 @@ public class CouponRecordController {
         return  couponRecordVO == null? JsonData.buildResult(BizCodeEnum.COUPON_NO_EXITS):JsonData.buildSuccess(couponRecordVO);
     }
 
-
-    @ApiOperation("添加新用户优惠券")
-    @PostMapping("/addNewUserCoupon")
-    public JsonData addNewUserCoupon(NewUserCouponAddInput input){
-
-        return couponRecordService.initnewUserCoupon(input);
-    }
-
 }
 

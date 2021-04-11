@@ -66,7 +66,7 @@ public class CouponController {
     @PostMapping("/addNewUserCoupon")
     public JsonData addNewUserCoupon(NewUserCouponAddInput input){
 
-        return couponRecordService.initnewUserCoupon(input);
+        return couponService.initnewUserCoupon(input);
     }
 
 }

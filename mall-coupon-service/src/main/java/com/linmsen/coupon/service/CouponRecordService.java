@@ -2,6 +2,7 @@ package com.linmsen.coupon.service;
 
 import com.linmsen.JsonData;
 import com.linmsen.coupon.controller.vo.CouponRecordVO;
+import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
 
 import java.util.Map;
 
@@ -18,6 +19,4 @@ public interface CouponRecordService {
     Map<String, Object> page(int page, int size);
 
     CouponRecordVO findById(long recordId);
-
-    JsonData initnewUserCoupon(com.linmsen.coupon.controller.vo.NewUserCouponAddInput input);
 }

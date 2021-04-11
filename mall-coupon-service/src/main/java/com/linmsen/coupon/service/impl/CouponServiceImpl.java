@@ -8,6 +8,7 @@ import com.linmsen.JsonData;
 import com.linmsen.LoginUser;
 import com.linmsen.content.UserContent;
 import com.linmsen.coupon.controller.vo.CouponVO;
+import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
 import com.linmsen.coupon.mapper.CouponMapper;
 import com.linmsen.coupon.mapper.CouponRecordMapper;
 import com.linmsen.coupon.model.CouponDO;
@@ -26,6 +27,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -91,7 +93,7 @@ public class CouponServiceImpl implements CouponService {
             couponRecordDO.setId(null);
 
             //高并发下扣减劵库存，采用乐观锁,当前stock做版本号,延伸多种防止超卖的问题,一次只能领取1张，TODO
-            int rows = couponMapper.reduceStock(couponId,couponDO.getStock());
+            int rows = couponMapper.reduceStock(couponId);
             if(rows == 1){
                 //库存扣减成功才保存
                 couponRecordMapper.insert(couponRecordDO);
@@ -106,6 +108,27 @@ public class CouponServiceImpl implements CouponService {
         }
 
 
+
+        return JsonData.buildSuccess();
+    }
+
+    @Override
+    public JsonData initnewUserCoupon(NewUserCouponAddInput input) {
+
+        LoginUser loginUser = new LoginUser();
+        loginUser.setId(input.getUserId());
+        loginUser.setName(input.getName());
+        UserContent.set(loginUser);
+
+        //查询新用户有哪些优惠券
+        List<CouponDO> couponDOList = couponMapper.selectList(new QueryWrapper<CouponDO>()
+                .eq("category",CouponCategoryEnum.NEW_USER.name()));
+
+        for(CouponDO couponDO : couponDOList){
+            //幂等操作，调用需要加锁
+            this.addCoupon(couponDO.getId(),CouponCategoryEnum.NEW_USER.name());
+
+        }
 
         return JsonData.buildSuccess();
     }

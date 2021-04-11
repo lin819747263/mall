@@ -1,6 +1,7 @@
 package com.linmsen.coupon.service;
 
 import com.linmsen.JsonData;
+import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
 
 import java.util.Map;
 
@@ -17,5 +18,7 @@ public interface CouponService {
     Map<String, Object> pageCouponActivity(int page, int size);
 
     JsonData addCoupon(long couponId, String couponCategory);
+
+    JsonData initnewUserCoupon(NewUserCouponAddInput input);
 
 }
