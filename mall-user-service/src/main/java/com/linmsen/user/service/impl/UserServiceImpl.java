@@ -16,6 +16,7 @@ import com.linmsen.user.mapper.UserMapper;
 import com.linmsen.user.model.UserDO;
 import com.linmsen.user.service.NotifyService;
 import com.linmsen.user.service.UserService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -44,6 +45,7 @@ public class UserServiceImpl implements UserService {
     private NotifyService notifyService;
 
     @Override
+    @GlobalTransactional
     public JsonData register(RegisterVO register) {
         boolean check = false;
         if(StringUtils.isNotBlank(register.getMail())){

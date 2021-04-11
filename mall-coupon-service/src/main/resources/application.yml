@@ -28,3 +28,12 @@ mybatis-plus:
 logging:
   level:
     root: INFO
+
+#seata配置
+seata:
+  tx-service-group: ${spring.application.name}-group
+  service:
+    grouplist:
+      linmsen: 192.168.217.145:8091
+    vgroup-mapping:
+      coupon-service-group: linmsen

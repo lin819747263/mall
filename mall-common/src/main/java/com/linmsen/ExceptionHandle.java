@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@ControllerAdvice
+//@ControllerAdvice
 @Slf4j
 public class ExceptionHandle {
     @ExceptionHandler(value = Exception.class)
