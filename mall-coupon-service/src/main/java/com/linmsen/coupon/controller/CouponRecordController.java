@@ -21,7 +21,7 @@ import java.util.Map;
  * @since 2021-04-10
  */
 @RestController
-@RequestMapping("/couponRecordDO")
+@RequestMapping("/api/record/v1")
 public class CouponRecordController {
 
     @Autowired

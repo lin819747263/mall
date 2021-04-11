@@ -56,7 +56,7 @@ public class UserController {
      * @return
      */
     @PostMapping("login")
-    public JsonData login(@RequestBody UserLoginRequest loginRequest){
+    public JsonData login(UserLoginRequest loginRequest){
         JsonData jsonData = userService.login(loginRequest);
         return jsonData;
     }

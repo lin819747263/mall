@@ -9,7 +9,7 @@ import lombok.Data;
 public class RegisterVO {
 
     @ApiModelProperty("邮箱")
-    private String email;
+    private String mail;
 
     @ApiModelProperty("昵称")
     private String name;

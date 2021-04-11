@@ -1,6 +1,8 @@
-package com.linmsen.user.interceptor;
+package com.linmsen.user.config;
 
+import com.linmsen.interceptor.LoginInterceptor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -8,7 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @Slf4j
 public class InterceptorConfig implements WebMvcConfigurer {
-    public  LoginInterceptor loginInterceptor(){
+
+    @Bean
+    public LoginInterceptor loginInterceptor(){
         return new LoginInterceptor();
     }
 
@@ -21,7 +25,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/api/user/*/**","/api/address/*/**")
 
         //排查不拦截的路径
-                .excludePathPatterns("/api/user/*/send_code","/api/user/*/captcha",
+                .excludePathPatterns("/api/user/*/send_code","/api/user/*/getCaptcha",
                 "/api/user/*/register","/api/user/*/login","/api/user/*/upload");
 
     }

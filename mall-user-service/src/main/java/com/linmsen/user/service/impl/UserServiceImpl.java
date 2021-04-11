@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public JsonData register(RegisterVO register) {
         boolean check = false;
-        if(StringUtils.isNotBlank(register.getEmail())){
-            check = notifyService.checkCode(SendCodeEnum.USER_REGISTER, register.getEmail(), register.getCode().toString());
+        if(StringUtils.isNotBlank(register.getMail())){
+            check = notifyService.checkCode(SendCodeEnum.USER_REGISTER, register.getMail(), register.getCode().toString());
         }
         if(!check){
             return JsonData.buildResult(BizCodeEnum.CODE_ERROR);

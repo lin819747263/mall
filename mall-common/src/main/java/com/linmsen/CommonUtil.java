@@ -2,6 +2,7 @@ package com.linmsen;
 
 import com.baomidou.mybatisplus.extension.api.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import java.security.MessageDigest;
 import java.util.Random;
 import java.util.UUID;
 
+@Slf4j
 public class CommonUtil {
 
     private static final String ALL_CHAR_NUM = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -100,16 +102,17 @@ public class CommonUtil {
         return saltString.toString();
     }
 
-    public static void sendJsonMessage(HttpServletResponse response, JsonData buildError) {
+    public static void sendJsonMessage(HttpServletResponse response, Object obj) {
         ObjectMapper objectMapper = new ObjectMapper();
-        response.setContentType("application/json;chartset=utf-8");
-        try {
-            PrintWriter writer = response.getWriter();
-            writer.write(objectMapper.writeValueAsString(objectMapper));
-            writer.close();
+        response.setContentType("application/json; charset=utf-8");
+
+        try (PrintWriter writer = response.getWriter()) {
+            writer.print(objectMapper.writeValueAsString(obj));
+
             response.flushBuffer();
+
         } catch (IOException e) {
-            e.printStackTrace();
+            log.warn("响应json数据给前端异常:{}",e);
         }
     }
 }

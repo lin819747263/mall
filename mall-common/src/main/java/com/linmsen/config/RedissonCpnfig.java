@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-@Configuration
+//@Configuration
 public class RedissonCpnfig {
     @Value("${spring.redis.host}")
     private String redisHost;
@@ -46,15 +46,15 @@ public class RedissonCpnfig {
     }
 
 
-    @Bean
-    public RedisTemplate<String, Object> stringSerializerRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate redisTemplate = new RedisTemplate();
-        redisTemplate.setConnectionFactory(redisConnectionFactory);
-        RedisSerializer<String> stringSerializer = new StringRedisSerializer();
-        redisTemplate.setKeySerializer(stringSerializer);
-        redisTemplate.setValueSerializer(stringSerializer);
-        redisTemplate.setHashKeySerializer(stringSerializer);
-        redisTemplate.setHashValueSerializer(stringSerializer);
-        return redisTemplate;
-    }
+//    @Bean
+//    public RedisTemplate<String, Object> stringSerializerRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+//        RedisTemplate redisTemplate = new RedisTemplate();
+//        redisTemplate.setConnectionFactory(redisConnectionFactory);
+//        RedisSerializer<String> stringSerializer = new StringRedisSerializer();
+//        redisTemplate.setKeySerializer(stringSerializer);
+//        redisTemplate.setValueSerializer(stringSerializer);
+//        redisTemplate.setHashKeySerializer(stringSerializer);
+//        redisTemplate.setHashValueSerializer(stringSerializer);
+//        return redisTemplate;
+//    }
 }

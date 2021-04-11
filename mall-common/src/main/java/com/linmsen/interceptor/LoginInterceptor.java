@@ -1,4 +1,4 @@
-package com.linmsen.config;
+package com.linmsen.interceptor;
 
 import com.linmsen.CommonUtil;
 import com.linmsen.JsonData;
