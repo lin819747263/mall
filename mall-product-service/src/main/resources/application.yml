@@ -14,6 +14,11 @@ spring:
     database: 8
     host: 47.99.206.79
     port: 6379
+  cloud:
+    #注册中心地址
+    nacos:
+      discovery:
+        server-addr: 47.99.206.79:8848
 #配置plus打印sql日志
 mybatis-plus:
   configuration:

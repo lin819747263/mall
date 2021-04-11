@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * <p>
@@ -52,6 +53,15 @@ public class ProductOrderController {
     }
 
     private void writeData(HttpServletResponse response, JsonData jsonData) {
+
+        try {
+            response.setContentType("text/html;charset=UTF8");
+            response.getWriter().write(jsonData.getData().toString());
+            response.getWriter().flush();
+            response.getWriter().close();
+        }catch (IOException e){
+            log.error("写出Html异常：{}",e);
+        }
 
     }
 

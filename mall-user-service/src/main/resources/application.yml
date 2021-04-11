@@ -14,6 +14,11 @@ spring:
     database: 8
     host: 47.99.206.79
     port: 6379
+  cloud:
+    #注册中心地址
+    nacos:
+      discovery:
+        server-addr: 47.99.206.79:8848
   mail:
     host: smtp.163.com #发送邮件服务器
     username: 18434351211@163.com #发送邮件的邮箱地址

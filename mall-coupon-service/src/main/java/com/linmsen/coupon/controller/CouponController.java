@@ -64,7 +64,7 @@ public class CouponController {
 
     @ApiOperation("添加新用户优惠券")
     @PostMapping("/addNewUserCoupon")
-    public JsonData addNewUserCoupon(NewUserCouponAddInput input){
+    public JsonData addNewUserCoupon(@RequestBody NewUserCouponAddInput input){
 
         return couponService.initnewUserCoupon(input);
     }

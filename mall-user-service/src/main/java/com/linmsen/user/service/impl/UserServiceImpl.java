@@ -8,8 +8,10 @@ import com.linmsen.LoginUser;
 import com.linmsen.content.UserContent;
 import com.linmsen.enums.BizCodeEnum;
 import com.linmsen.user.SendCodeEnum;
+import com.linmsen.user.controller.vo.NewUserCouponAddInput;
 import com.linmsen.user.controller.vo.RegisterVO;
 import com.linmsen.user.controller.vo.UserLoginRequest;
+import com.linmsen.user.fegin.CouponFeignService;
 import com.linmsen.user.mapper.UserMapper;
 import com.linmsen.user.model.UserDO;
 import com.linmsen.user.service.NotifyService;
@@ -34,6 +36,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
+    private CouponFeignService couponFeignService;
+
+    @Autowired
     private UserMapper userMapper;
     @Autowired
     private NotifyService notifyService;
@@ -54,6 +59,8 @@ public class UserServiceImpl implements UserService {
         userDO.setPwd(cryptPwd);
 
         userMapper.insert(userDO);
+
+        initTask(userDO);
 
         // 设置密码
 
@@ -94,5 +101,15 @@ public class UserServiceImpl implements UserService {
 
     private boolean checkUnique(String email){
         return false;
+    }
+
+
+    private void initTask(UserDO userDO){
+        NewUserCouponAddInput input = new NewUserCouponAddInput();
+        input.setName(userDO.getName());
+        input.setUserId(userDO.getId());
+        JsonData jsonData = couponFeignService.addNewUserCoupon(input);
+        System.out.println("发放成功");
+        System.out.println(jsonData);
     }
 }
