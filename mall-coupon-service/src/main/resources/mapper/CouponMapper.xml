@@ -3,7 +3,7 @@
 <mapper namespace="com.linmsen.product.mapper.CouponMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.linmsen.product.model.CouponDO">
+    <resultMap id="BaseResultMap" type="com.linmsen.coupon.model.CouponDO">
         <id column="id" property="id" />
         <result column="category" property="category" />
         <result column="publish" property="publish" />
