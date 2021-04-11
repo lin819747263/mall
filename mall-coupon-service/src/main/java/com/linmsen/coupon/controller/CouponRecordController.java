@@ -1,11 +1,11 @@
-package com.linmsen.product.controller;
+package com.linmsen.coupon.controller;
 
 
 import com.linmsen.JsonData;
-import com.linmsen.product.controller.vo.CouponRecordVO;
-import com.linmsen.product.controller.vo.NewUserCouponAddInput;
-import com.linmsen.product.service.CouponRecordService;
+import com.linmsen.coupon.controller.vo.CouponRecordVO;
+import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
 import com.linmsen.enums.BizCodeEnum;
+import com.linmsen.product.service.CouponRecordService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

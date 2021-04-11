@@ -1,4 +1,4 @@
-package com.linmsen.coupon.model;
+package com.linmsen.product.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;

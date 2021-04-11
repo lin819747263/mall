@@ -1,9 +1,16 @@
-package com.linmsen.coupon.controller;
+package com.linmsen.product.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.linmsen.JsonData;
+import com.linmsen.product.controller.vo.BannerVO;
+import com.linmsen.product.controller.vo.ProductVO;
+import com.linmsen.product.service.ProductService;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -16,6 +23,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/productDO")
 public class ProductController {
+
+    @Autowired
+    ProductService productService;
+
+    @ApiOperation("产品列表")
+    @GetMapping("page")
+    public Map<String, Object> page(@RequestParam(value = "page",defaultValue = "1")int page,
+                                    @RequestParam(value = "size",defaultValue = "20")int size) {
+        return productService.page(page, size);
+    }
+
+
+    @ApiOperation("产品详情")
+    @GetMapping("detail/{productId}")
+    public JsonData detail(@PathVariable String productId) {
+        return productService.detail(productId);
+    }
 
 }
 

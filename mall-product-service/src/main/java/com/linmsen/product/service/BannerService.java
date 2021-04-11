@@ -1,7 +1,8 @@
-package com.linmsen.coupon.service;
+package com.linmsen.product.service;
 
-import com.linmsen.coupon.model.BannerDO;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.linmsen.product.controller.vo.BannerVO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author linmsen
  * @since 2021-04-10
  */
-public interface BannerService extends IService<BannerDO> {
+public interface BannerService {
+
+    List<BannerVO> list();
 
 }

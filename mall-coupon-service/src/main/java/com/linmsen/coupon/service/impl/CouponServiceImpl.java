@@ -1,4 +1,4 @@
-package com.linmsen.product.service.impl;
+package com.linmsen.coupon.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -7,16 +7,16 @@ import com.linmsen.BizException;
 import com.linmsen.JsonData;
 import com.linmsen.LoginUser;
 import com.linmsen.content.UserContent;
-import com.linmsen.product.controller.vo.CouponVO;
-import com.linmsen.product.mapper.CouponMapper;
-import com.linmsen.product.mapper.CouponRecordMapper;
-import com.linmsen.product.model.CouponDO;
-import com.linmsen.product.model.CouponRecordDO;
-import com.linmsen.product.service.CouponService;
+import com.linmsen.coupon.controller.vo.CouponVO;
+import com.linmsen.coupon.mapper.CouponMapper;
+import com.linmsen.coupon.mapper.CouponRecordMapper;
+import com.linmsen.coupon.model.CouponDO;
+import com.linmsen.coupon.model.CouponRecordDO;
 import com.linmsen.enums.BizCodeEnum;
 import com.linmsen.enums.CouponCategoryEnum;
 import com.linmsen.enums.CouponPublishEnum;
 import com.linmsen.enums.CouponStateEnum;
+import com.linmsen.product.service.CouponService;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;

@@ -1,7 +1,6 @@
-package com.linmsen.product.service;
+package com.linmsen.coupon.service;
 
 import com.linmsen.JsonData;
-import com.linmsen.product.model.CouponDO;
 
 import java.util.Map;
 

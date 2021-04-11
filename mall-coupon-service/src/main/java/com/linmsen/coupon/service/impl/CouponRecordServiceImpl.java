@@ -1,4 +1,4 @@
-package com.linmsen.product.service.impl;
+package com.linmsen.coupon.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -6,10 +6,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.linmsen.JsonData;
 import com.linmsen.LoginUser;
 import com.linmsen.content.UserContent;
-import com.linmsen.product.controller.vo.CouponRecordVO;
-import com.linmsen.product.controller.vo.NewUserCouponAddInput;
-import com.linmsen.product.mapper.CouponRecordMapper;
-import com.linmsen.product.model.CouponRecordDO;
+import com.linmsen.coupon.controller.vo.CouponRecordVO;
+import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
+import com.linmsen.coupon.mapper.CouponRecordMapper;
+import com.linmsen.coupon.model.CouponRecordDO;
 import com.linmsen.product.service.CouponRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

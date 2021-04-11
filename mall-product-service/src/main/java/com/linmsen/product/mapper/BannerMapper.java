@@ -1,7 +1,7 @@
-package com.linmsen.coupon.mapper;
+package com.linmsen.product.mapper;
 
-import com.linmsen.coupon.model.BannerDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.linmsen.product.model.BannerDO;
 
 /**
  * <p>

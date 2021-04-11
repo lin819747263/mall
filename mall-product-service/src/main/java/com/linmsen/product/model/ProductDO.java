@@ -1,4 +1,4 @@
-package com.linmsen.coupon.model;
+package com.linmsen.product.model;
 
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;

@@ -1,7 +1,12 @@
-package com.linmsen.coupon.service;
+package com.linmsen.product.service;
 
-import com.linmsen.coupon.model.ProductDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.linmsen.JsonData;
+import com.linmsen.product.controller.vo.ProductVO;
+import com.linmsen.product.model.ProductDO;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -11,6 +16,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author linmsen
  * @since 2021-04-10
  */
-public interface ProductService extends IService<ProductDO> {
+public interface ProductService {
 
+    Map<String, Object> page(int page, int size);
+
+    JsonData detail(String productId);
 }

@@ -1,9 +1,7 @@
-package com.linmsen.product.service;
+package com.linmsen.coupon.service;
 
 import com.linmsen.JsonData;
-import com.linmsen.product.controller.vo.CouponRecordVO;
-import com.linmsen.product.controller.vo.NewUserCouponAddInput;
-import com.linmsen.product.model.CouponRecordDO;
+import com.linmsen.coupon.controller.vo.CouponRecordVO;
 
 import java.util.Map;
 
