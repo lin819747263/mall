@@ -10,7 +10,7 @@ import com.linmsen.coupon.controller.vo.CouponRecordVO;
 import com.linmsen.coupon.controller.vo.NewUserCouponAddInput;
 import com.linmsen.coupon.mapper.CouponRecordMapper;
 import com.linmsen.coupon.model.CouponRecordDO;
-import com.linmsen.product.service.CouponRecordService;
+import com.linmsen.coupon.service.CouponRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
